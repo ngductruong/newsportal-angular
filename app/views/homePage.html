@@ -1,0 +1,10 @@
+
+
+<!-- HOME PAGE -->
+
+<ul>
+	<li data-ng-repeat="news in listNews | filter : news.Title">
+		<img width="100px" height="auto" src="{{ news.Image }}"/>
+	 	<a href="{{ news.Link }}"> {{ news.Title }} </a>
+	 </li>
+</ul>

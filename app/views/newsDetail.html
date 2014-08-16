@@ -1,0 +1,38 @@
+<style type="text/css">
+.clearfix {
+	clear : both;
+}
+</style>
+
+<!-- NEWS DETAIL -->
+
+<h3> {{ news.Title }} </h3>
+
+<span>{{ news.Summary }}</span>
+
+<div class="clear-fix"></div>
+<br/>
+
+<img width="250px" height="auto" src="{{ news.Image }}" style="text-align : center" />
+
+<div data-ng-init="myHTML='<br/><h1>AAAA</h1><br/>'">
+	<div data-ng-bind-html="myHTML"></div>
+</div>
+
+
+<!-- OTHER NEWS -->
+<h3>Next news </h3>
+<ul>
+	<li data-ng-repeat="news in nextNews | filter : newnews.Title">
+	 	<a href="{{ news.Link }}"> {{ news.Title }} </span>
+	 </li>
+</ul>
+
+<h3>Previous news </h3>
+<ul>
+	<li data-ng-repeat="news in prevNews | filter : newnews.Title">
+	 	<a href="{{ news.Link }}"> {{ news.Title }} </span>
+	 </li>
+</ul>
+
+

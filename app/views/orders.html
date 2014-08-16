@@ -1,0 +1,6 @@
+<h1>Orders</h1>
+<div>
+    <ul>
+        <li data-ng-repeat="order in orders | orderBy:'name'">{{ order.name | uppercase }} </li>
+    </ul>
+</div>
