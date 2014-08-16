@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+	<title></title>
+</head>
+<body>
+
+<div class="container">
+	<h1></h1>
+
+ 	<!-- ng-model is a directive -->
+    Name : <input type="text" data-ng-model="searchName" />
+
+    <!-- {{ searchName }}  is data binding expression -->
+    {{ searchName }}
+
+</div>
+<br />
+
+<!-- Define the controller to use | SimpleController | Link between controller & view -->
+<!-- Why it is $scope, because it's affect on a scope of DOM, between two tags -->
+<div data-ng-controller="SimpleController">
+	<h3>Looping with the ng-repeat Directive </h3>
+	<ul>
+		<li data-ng-repeat="customer in customers | filter:searchName | orderBy:'age'">{{ customer.name | uppercase }} -- {{ customer.age }} </li>
+	</ul>
+</div>
+<!-- End of $scope -->
+
+<script src="angular-1.2.16/angular.min.js"></script>
+<script src="angular-1.2.16/angular-route.min.js"></script>
+<script>
+	function SimpleController($scope) {
+		$scope.customers = [
+			{name:'Truong', age:11},
+			{name:'Duy', age:12},
+			{name:'Khanh', age:13}
+		];
+	}
+
+</script>
+</body>
+
+</html>

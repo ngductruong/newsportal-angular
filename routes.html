@@ -1,0 +1,72 @@
+<!-- This is the demonstration about Modules, Routes and Factories -->
+<!DOCTYPE html>
+<html data-ng-app="demoApp">
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- Placeholder for view -->
+<div data-ng-view=""></div>
+
+<script src="angular-1.2.16/angular.min.js"></script>
+<script src="angular-1.2.16/angular-route.min.js"></script>
+
+<script>
+
+	// Create a module with empty dependency
+	var demoApp = angular.module('demoApp', ['ngRoute']);
+
+	demoApp.config(function($routeProvider){
+		$routeProvider
+		.when('/',
+		{
+			controller : 'SimpleController',
+			templateUrl :'app/views/customers.html'
+		})
+		.when('/v2',{
+			controller : 'SimpleController',
+			templateUrl: 'app/views/orders.html'
+		})
+		.otherwise({ redirectTo : '/'});
+	});
+
+	demoApp.factory('simpleFactory', function(){
+		var factory = {};
+		var customers = [
+			{name:'Truong'	, age:11},
+			{name:'Duy'		, age:12},
+			{name:'Khanh'	, age:13}
+		];
+		factory.getCustomers = function(){
+			return customers;
+		}
+		return factory;
+	});
+
+	demoApp.service('simpleService', function(){
+		var service = {};
+		var me = 'TruongND';
+
+		service.GetMyName = function(){
+			return me;
+		}
+		return service;
+	});
+
+
+	demoApp.controller('SimpleController', function($scope, simpleFactory){
+		$scope.customers = simpleFactory.getCustomers();
+
+		$scope.orders = [
+			{name:'Minh'},
+			{name:'Hoa'}
+		];
+
+
+	});
+
+</script>
+</body>
+
+</html>
