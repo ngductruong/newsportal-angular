@@ -3,21 +3,33 @@
 <!-- Everytime you see ng-, that is Angular Directives -->
 <!-- We use data- prefix to validate HTML -->
 <!DOCTYPE html>
-<html data-ng-app="application">
+<html>
 <head>
 	<title></title>
 </head>
 <body>
 
+<!-- 2 module in one page -->
+
+<!-- *NOTE : This is impossible to have 2 app on 1 view -->
+<!-- <div data-ng-app="secondApp">
+	<div  data-ng-controller="secondController">
+		{{ name }}
+	</div>
+</div> -->
+
 <!-- I need a shared view here -->
 <!-- <div data-ng-view="sharedView"></div> -->
 
-<div data-ng-controller='sharedController'>
-	<div data-ng-include src="'app/views/shared.html'"></div>
+<div data-ng-app="application">
+	<div data-ng-controller='sharedController'>
+		<div data-ng-include src="'app/views/shared.html'"></div>
+	</div>
+	<!-- This is the placeholder for views -->
+	<div data-ng-view></div>
 </div>
 
-<!-- This is the placeholder for views -->
-<div data-ng-view></div>
+
 
 <!-- Angular modules -->
 <script src="angular-1.2.16/angular.min.js"></script>

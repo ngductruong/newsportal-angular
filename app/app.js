@@ -23,3 +23,12 @@ application.config(function($routeProvider)
 			redirectTo : '/'
 		});
 });
+
+
+// Register another module
+var secondApp = angular.module('secondApp', []);
+
+secondApp.controller('secondController', function($scope) {
+	$scope.name = 'Nguyen Duc Truong';
+
+});
