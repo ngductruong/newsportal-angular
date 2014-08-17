@@ -4,6 +4,13 @@
 * Displaying homepage
 */
 
+application.controller('sharedController', function($scope){
+
+	var categories = [{name:'Home'}, {name:'Sub'}, {name:'Simple'}, {name:'Trigger'}];
+
+	$scope.categories = categories;
+});
+
 // Modify controller
 application.controller('homeController', function($scope, httpFactory, constantsFactory, callbackFactory){
 
@@ -11,9 +18,9 @@ application.controller('homeController', function($scope, httpFactory, constants
 
 	init();
 
-	function init()
-	{	
+	function init()	{	
 		$scope.listNews = [];
+
 		var key = constantsFactory.AuthorizationKey;
 
 		httpFactory.GetNews(key)
@@ -42,12 +49,28 @@ application.controller('homeController', function($scope, httpFactory, constants
 			}
 			
 		});
+
+		// Get categories
+		$scope.categories = [];
+
+		httpFactory.GetCategories(key)
+		.success(function(response) {
+			for(var i = 0; i < response.length; i++) {
+
+				console.log(response[i]);
+
+				$scope.categories.push({
+					Name : response[i].Name
+				});
+			}
+		});
+
 	};
 	
 
 
-	$scope.AddName = function()
-	{
+
+	$scope.AddName = function()	{
 		// $scope.listNews.push({ name : $scope.newPerson.name });
 
 		// Modify truong
