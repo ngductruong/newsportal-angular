@@ -54,6 +54,17 @@ application.factory('httpFactory', function($http)
 		return promise;
 	};
 
+	factory.GetCategories = function(key) {
+		var promise = 
+			$http ({
+				method: 'GET', 
+				url: "http://api.biznews.com.vn/api/category/all/vi-VN",
+				headers: {'Authorization': key}
+			});			
+
+		return promise;
+	}
+
 	factory.GetNextNews = function(key, newsId, categoryId) {
 
 		var promise = 
