@@ -14,6 +14,11 @@ application.config(function($routeProvider)
 			controller : 'detailController',
 			templateUrl: 'app/views/newsDetail.html'
 		})
+		.when('/sharedView', 
+		{
+			controller : 'sharedController',
+			templateUrl : 'app/views/shared.html'
+		})
 		.otherwise ({ 
 			redirectTo : '/'
 		});
