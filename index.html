@@ -9,9 +9,15 @@
 </head>
 <body>
 
-<div data-ng-view="">
-   
+<!-- I need a shared view here -->
+<!-- <div data-ng-view="sharedView"></div> -->
+
+<div data-ng-controller='sharedController'>
+	<div data-ng-include src="'app/views/shared.html'"></div>
 </div>
+
+<!-- This is the placeholder for views -->
+<div data-ng-view></div>
 
 <!-- Angular modules -->
 <script src="angular-1.2.16/angular.min.js"></script>
