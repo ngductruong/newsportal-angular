@@ -12,13 +12,59 @@ application.controller('menuController', function($scope, httpFactory, constants
 	// Get categories
 	httpFactory.GetCategories(key)
 	.success(function(response) {
-
 		console.log(response);
-
 		$scope.categories = response;
-
 	});
 	
+});
+
+application.controller('categoryHomepageController', function($scope, httpFactory, constantsFactory){
+	var key = constantsFactory.AuthorizationKey;
+
+	$scope.areas = [];
+
+	// Get areas
+	init();
+
+	function init() {
+		// Get areas from server
+		var promise = httpFactory.GetAreas(key);
+		// Success callback
+		promise.success(function(response){
+			console.log('AREAS---------------');
+			console.log(response);
+
+			for(var i = 0; i < response.length; i++) {
+				$scope.areas.push({
+					Name : response[i].AreaName,
+					CategoryId : response[i].CategoryId,
+					Category : null,
+					ListNews : []
+				});
+			}
+			
+		});
+		// End callback
+
+		promise.then(function(response) {
+
+			console.log('PROMISE RUNS HERE');
+
+			for(var i = 0; i < $scope.areas.length; i++) {
+				var item = $scope.areas[i];
+
+				var getNewsPromise = httpFactory.GetNewsOfArea(item,key, 7);
+
+				// getNewsPromise.success(function(response) {
+				// 	item.ListNews = response;
+				// });
+
+			}
+		});
+	};
+
+
+
 });
 
 application.controller('hotsiteController', function($scope, httpFactory, constantsFactory){
@@ -114,9 +160,6 @@ application.controller('homeController', function($scope, httpFactory, constants
 		httpFactory.GetCategories(key)
 		.success(function(response) {
 			for(var i = 0; i < response.length; i++) {
-
-				console.log(response[i]);
-
 				$scope.categories.push({
 					Name : response[i].Name
 				});
