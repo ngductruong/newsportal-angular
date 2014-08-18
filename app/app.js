@@ -7,28 +7,20 @@ application.config(function($routeProvider)
 		.when('/', 
 		{
 			controller : 'homeController',
-			templateUrl :'app/views/homePage.html'
+			templateUrl :'app/js/views/homePage.html'
 		})
 		.when('/newsdetail/:newsId', 
 		{
 			controller : 'detailController',
-			templateUrl: 'app/views/newsDetail.html'
+			templateUrl: 'app/js/views/newsDetail.html'
 		})
 		.when('/sharedView', 
 		{
 			controller : 'sharedController',
-			templateUrl : 'app/views/shared.html'
+			templateUrl : 'app/js/views/shared.html'
 		})
 		.otherwise ({ 
 			redirectTo : '/'
 		});
 });
 
-
-// Register another module
-var secondApp = angular.module('secondApp', []);
-
-secondApp.controller('secondController', function($scope) {
-	$scope.name = 'Nguyen Duc Truong';
-
-});

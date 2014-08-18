@@ -4,11 +4,21 @@
 * Displaying homepage
 */
 
-application.controller('sharedController', function($scope){
+application.controller('menuController', function($scope, httpFactory, constantsFactory){
 
-	var categories = [{name:'Home'}, {name:'Sub'}, {name:'Simple'}, {name:'Trigger'}];
+	// Get configuration
+	var key = constantsFactory.AuthorizationKey;
+	
+	// Get categories
+	httpFactory.GetCategories(key)
+	.success(function(response) {
 
-	$scope.categories = categories;
+		console.log(response);
+
+		$scope.categories = response;
+
+	});
+	
 });
 
 // Modify controller

@@ -1,0 +1,539 @@
+@font-face {
+    font-family: RobotoCondensed;
+    src: url('../plugins/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: RobotoCondensed-Light;
+    src: url('../plugins/fonts/RobotoCondensed/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: RobotoCondensed-Bold;
+    src: url('../plugins/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf');
+}
+
+body{
+    font-family: RobotoCondensed;
+}
+.menu-overlay-area
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.font-light
+{
+    font-family: RobotoCondensed-Light !important;
+}
+.font-bold
+{
+    font-family: RobotoCondensed-Bold !important;
+}
+.body-hidden
+{
+    overflow: hidden;
+}
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+.no-padding
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.header
+{
+    min-height: 100px;
+}
+
+.maincontent
+{
+    min-height: 600px;
+}
+.h10
+{
+    min-height: 8px;
+}
+.h20
+{
+    min-height: 16px;
+}
+.h100
+{
+    min-height: 80px;
+}
+
+.h200
+{
+    min-height: 160px;
+}
+.h300
+{
+    min-height: 240px;
+}
+.h400
+{
+    min-height: 320px;
+}
+.h500
+{
+    min-height: 400px;
+}
+.h600
+{
+    min-height: 480px;
+}
+.h700
+{
+    min-height: 560px;
+}
+
+.bg1
+{
+    background-color: #556270;
+}
+.bg2
+{
+    background-color: #4ECDC4;
+}
+
+.bg3
+{
+    background-color: #C7F464;
+
+}
+.bg4
+{
+    background-color: #FF6B6B;
+}
+.bg5
+{
+    background-color: #C44D58;
+}
+.skill
+{
+
+}
+.skill-bar
+{
+    background-image: url('../images/bgs/piece_small.png');
+    background-repeat: repeat-x;
+    height: 30px;
+
+}
+
+
+/*@media screen and (min-width: 300px) and (max-width : 500px) {*/
+/*.me-container*/
+/*{*/
+/*min-width: 300px;*/
+/*}*/
+/*}*/
+
+.live-event
+{
+    padding-top: 0px;
+    padding-bottom: 10px;
+    background-color: darkblue;
+    color: #fff;
+    padding-left: 10px;  padding-right: 10px;
+}
+.live-event a
+{
+    color : #fff;
+    text-decoration : none;
+}
+.hotsite
+{
+    margin-top:10px
+;
+    padding-left: 10px;
+    /* padding-right: 10px; */
+}
+.hotsite-title > h4
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.hotsite-date
+{
+    color: #888888;
+    font-style: italic;
+}
+.hotsite-summary
+{
+    margin-bottom : 0px
+}
+
+.margin-top-10
+{
+    margin-top:10px
+}
+/*------------------ LIST NEWS WITH THUMBNAIL ------------------------*/
+.list-thumbnail-news
+{
+    list-style: none outside none;
+}
+.list-thumbnail-news .item-news
+{
+
+}
+.list-thumbnail-news .item-news-heading
+{
+    color : black;
+    font-size : 18px;
+    margin-left: -15px;
+}
+.list-thumbnail-news .item-news-line
+{
+    height : 1px;
+    background-color: #e2e2e2;
+    margin : 2px 0px 2px 0px;
+}
+.list-thumbnail-news .item-news-title
+{
+    font-size: 16px;
+    color : darkblue;
+}
+.list-thumbnail-news .item-news img
+{
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-left: 0px;
+}
+/*------------------------------------------------------------------*/
+
+/*------------------ LIST NEWS WITH THUMBNAIL ------------------------*/
+.list-text-news
+{
+}
+
+.list-text-news .item-news
+{
+    /*padding: 5px 0px 0px 0px;*/
+
+}
+.category-detail-page .list-text-news .item-news
+{
+    padding: 5px 0px 0px 0px;
+}
+.list-text-news .item-news-line
+{
+    height : 1px;
+    background-color: #e2e2e2;
+    margin : 2px 0px 2px 0px;
+}
+.list-text-news .item-news-title
+{
+    font-size: 16px;
+    color : Black;
+}
+/*------------------------------------------------------------------*/
+
+.full-width-breadcumb
+{
+
+}
+.full-width-breadcumb-triangle
+{
+    border: 1px Solid;
+    border-top : none;
+    border-right:  none;
+
+}
+/*-------------------------USE THIS CSS TO DISPLAY FULL WIDTH TITLE -------------------------*/
+.full-width-title
+{
+    margin-top: 5px;
+    padding : 5px 0px 5px 10px;
+    font-size: 16px;
+    background-color: #e2e2e2;
+}
+.full-width-title-bordered
+{
+    margin-bottom: 5px;
+    font-size: 18px;
+    border-bottom : 2px Solid #269abc;
+    padding-left: 0px;
+}
+/*------------------------- NEWS CONTENT -------------------------*/
+.news-content
+{
+
+}
+.news-content .news-content-title
+{
+    font-size: 28px;
+    display: block;
+}
+
+.news-content .news-content-summary
+{
+    font-size: 18px;
+}
+.news-content .news-content-body
+{
+    font-size: 18px;
+}
+.news-content img
+{
+    max-width: 100%;
+
+    height: auto !important;
+}
+
+@media screen and (min-width: 300px) and (max-width : 500px) {
+    .news-content .news-content-video-container,.news-content-video
+    {
+        width: 270px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    
+    .voting-frame
+    {
+        width: 290px;
+        height: 500px;
+        overflow: hidden;
+        border: none;
+    }
+
+}
+@media screen and (min-width: 501px) and (max-width :7680px) {
+    .news-content .news-content-video-container,.news-content-video
+    {
+        width:480px;
+        height: 270px;
+        margin: 0 auto;
+    }
+    
+    .voting-frame
+    {
+        width: 290px;
+        height: 500px;
+        overflow: hidden;
+        border: none;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+.content-area
+{
+    margin-top: 10px;
+    padding-left : 10px;
+    padding-right: 10px;
+}
+.content-area-heading
+{
+    height: 55px;
+
+}
+.content-area-heading > .icon
+{
+    height: 55px;
+    float : left;
+}
+.content-area-heading > .heading-text
+{
+    float : left;
+    margin-top: 18px;
+    font-size: 20px;
+}
+.content-area-heading > .bottom-line
+{
+    border-bottom: 2px Solid #269abc;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+}
+.content-area-heading h3
+{
+    display: inline;
+    padding-top : 30px;
+}
+.content-area-heading > a
+{
+    /*color: #fff;*/
+}
+.content-area-body img
+{
+    padding-left: 0px;
+    padding-right:5px;
+    padding-top: 10px;
+}
+.content-area ul
+{
+    padding-top : 5px;
+    padding-left: 10px;
+    list-style: disc;
+    float:left;
+}
+.content-area ul li
+{
+    border-top : 1px Solid #e2e2e2;
+    padding : 5px 0px 5px 0px;
+}
+.content-area ul li > a
+{
+    font-size : 16px;
+}
+.content-area-title > h5
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.content-area-date
+{
+    color: #888888;
+    font-style: italic;
+}
+.content-area-summary
+{
+    margin-bottom : 0px
+}
+
+
+.sports-search-bar
+{
+    height: 36px;padding-top: 5px;
+}
+.sports-search-bar img.desktop
+{
+    height: 30px;
+}
+.sports-search-bar img.logo
+{
+    height: 20px;
+}
+
+
+.footer
+{
+    padding-top : 5px;
+    background-color: darkblue;
+    color: #fff;
+    font-size : 16px;
+    margin-top: 20px;
+}
+.footer-item a
+{
+    font-size : 16px;
+    color: #fff;
+}
+.hotnews-title
+{
+    font-size: 26px;
+}
+
+
+.scroll_top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+.menu-item-heading
+{
+    display: block;
+    width: 10px;
+    height: 40px;
+    float: left;
+    background-color: #DC0C15;
+}
+
+
+/*LICH PHAT SONG*/
+.epg-container
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+.epg-channel
+{
+
+}
+.epg-title
+{
+    border-left: 5px solid #199ccc;
+}
+.epg-list
+{
+    list-style: none outside none;
+    padding: 0px;
+    margin: 0px;
+    border-left: 5px solid #199ccc;
+
+}
+.epg-item-border
+{
+    border-top: 1px solid #e2e2e2;
+    height: 1px;
+    /* padding-left: 0px; */
+    /* margin: 0px -15px 0px -15px; */
+}
+.epg-item
+{
+    margin: 0px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px Solid #e2e2e2;
+}
+.epg-channel
+{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.epg-time
+{
+    display: block;
+    font-size: 14px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.epg-name
+{
+    display: block;
+    font-size: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.epg-homepage
+{
+    background-color: #000;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* -------------------- NEWS DETAIL --------------- */
+.news-detail
+{
+}
+.news-detail .list-text-news .item-news
+{
+    padding : 5px 0px 5px 0px;
+}
+
+.full-width-title {
+    margin-top: 5px;
+    padding: 5px 0px 5px 10px;
+    font-size: 16px;
+    background-color: darkblue;
+    color: #fff;
+}

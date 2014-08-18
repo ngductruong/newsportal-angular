@@ -1,0 +1,139 @@
+<div id="menu-area" class="menu-area-show menu-area-default" style="left: -240px;">
+    <div class="menu-list-container">
+
+        <!-- MENU BUTTON -->
+        <div class="menu-button">
+            <img src="app/img/hamburger-menu.gif" alt="">
+        </div>
+
+        <!-- MENU CONTAINER -->
+        <div class="menu-container">
+
+            <!-- MENU TITLE -->
+            <div class="h10" style="border-bottom: 1px solid #e4b9b9">
+                <h4 style="padding-left: 20px; padding-top: 5px;">
+                    CHUYÊN MỤC
+                </h4>
+            </div>
+
+            <!-- MENU LIST -->
+            <ul class="menu-list-items">
+                
+                <!-- MENU ITEM -->
+                <li data-ng-repeat="cat in categories">
+                    <a href="{{ cat.Link }}">
+                        <div class="menu-item-heading"></div>
+                        <span class="menu-icon">&nbsp;</span>{{ cat.Name }}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 180) {
+            $('.scroll_top').fadeIn();
+        } else {
+            $('.scroll_top').fadeOut();
+        }
+    });
+
+    $(document).ready(function(){
+         console.log($('.menu-button'));
+
+         $('#menu-area').click(function () {
+
+
+            var pos1 = $('#menu-area').css('left');
+            if (pos1 == '-240px') {
+                $('#menu-area').animate({ left: '0' }, 200, function () {
+                    var heightColleft = $('#menu-area .menu-container').height();
+                    $('#sport-maincontent').height(heightColleft+35);
+
+                    $('#sport-maincontent').addClass('body-hidden');
+                    $(".menu-overlay-area").show();
+                    $(".menu-overlay-area").height(heightColleft + 35);
+                });
+            } else {
+                $('#menu-area').animate({ left: '-240' }, 200, function () {
+                    $('#sport-maincontent').height('');
+                    $('#sport-maincontent').removeClass('body-hidden');
+                    $(".menu-overlay-area").hide();
+                });
+            }
+        });
+
+    })
+   
+
+    //Generic swipe handler for all directions
+    // $(".menu-overlay-area").swipe({
+    //     swipeLeft: function (event, direction, distance, duration, fingerCount) {
+    //         var pos1 = $('#menu-area').css('left');
+    //         if (pos1 != '200px') {
+    //             $('#menu-area').animate({ left: '-240' }, 200, function () {
+    //                 $('#sport-maincontent').height('');
+    //                 $('#sport-maincontent').removeClass('body-hidden');
+    //                 $(".menu-overlay-area").hide();
+    //             });
+    //         }
+    //     },
+    //     tap: function (event, target) {
+    //         $('#menu-area').animate({ left: "-240" }, 200, function () {
+    //             var heightColleft = $('#menu-area .menu-container').height();
+    //             $('#sport-maincontent').height('');
+    //             $('#sport-maincontent').removeClass("body-hidden");
+    //             $(".menu-overlay-area").hide();
+    //         })
+    //     },
+    //     //Default is 75px, set to 0 for demo so any distance triggers swipe
+    //     threshold: 0
+    // });
+
+
+    //        //Generic swipe handler for all directions
+    //        $(".menu-overlay-area").swipe( {
+    //            //Generic swipe handler for all directions
+    //            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+    //                $('#menu-area').animate({left:"-240"},200,function(){
+    //                    var heightColleft = $('#menu-area .menu-container').height();
+    //                    $('#page').height('');
+    //                    $('#page').removeClass("hidden");
+    //                    $(".menu-overlay-area").hide();
+    //                })
+    //            },
+    //            tap:function(event, target) {
+    //                $('#menu-area').animate({left:"-240"},200,function(){
+    //                    var heightColleft = $('#menu-area .menu-container').height();
+    //                    $('#page').height('');
+    //                    $('#page').removeClass("hidden");
+    //                    $(".menu-overlay-area").hide();
+    //                })
+    //            },
+    //            //Default is 75px, set to 0 for demo so any distance triggers swipe
+    //            threshold:0
+    //        });
+
+    //show dropdown menu
+    $('.img_arrow_timer').click(function () {
+        if ($('.block_show_breakumb').css('display') == 'none') {
+            $(this).addClass('active');
+            $(this).parent().next().fadeIn(200);
+        } else {
+            $(this).removeClass('active');
+            $('.block_show_breakumb').hide();
+        }
+
+        return false;
+    });
+</script>
+
+

@@ -3,47 +3,22 @@
 <!-- Everytime you see ng-, that is Angular Directives -->
 <!-- We use data- prefix to validate HTML -->
 <!DOCTYPE html>
-<html  data-ng-app="application">
+<html>
 <head>
+	<script type="text/javascript" src="../app/libs/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../app/libs/custom/savis.js"></script>
 
-	<script type="text/javascript" src="app/libs/jquery/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="app/libs/custom/savis.js"></script>
-
-    <link href="app/libs/bootstrap//bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="app/css/site.css" rel="stylesheet" type="text/css">
-    <link href="app/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="../app/libs/bootstrap//bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../app/css/site.css" rel="stylesheet" type="text/css">
+    <link href="../app/css/custom.css" rel="stylesheet" type="text/css">
 	<title>Sample angular application</title>
-
 </head>
-
-<!-- Angular modules -->
-<script src="app/libs/angular-1.2.16/angular.min.js"></script>
-<script src="app/libs/angular-1.2.16/angular-route.min.js"></script>
-<script src="app/libs/angular-1.2.16/angular-sanitize.min.js"></script>
-
 <body>
 
-<!-- 2 module in one page -->
-
-<!-- *NOTE : This is impossible to have 2 app on 1 view -->
-<!-- <div data-ng-app="secondApp">
-	<div  data-ng-controller="secondController">
-		{{ name }}
-	</div>
-</div> -->
-
-<!-- I need a shared view here -->
-<!-- <div data-ng-view="sharedView"></div> -->
-
-
-<div data-ng-controller='menuController'>
-	<div data-ng-include src="'app/js/partials/menuList.html'"></div>
-</div>
-
-
-
-
     <!-- Container -->
+    
+
+
     <div id="sport-maincontent" class="">
         <!-- END HEADER -->
         
@@ -51,7 +26,7 @@
     <!--SEARCH BAR-->
     <div class="container-fluid sports-search-bar">
         <div class="row">
-            <img src="app/img/logovtv.png" class="pull-left logo">
+            <img src="../app/img/logovtv.png" class="pull-left logo">
 
             
             
@@ -62,7 +37,7 @@
     <!--SEARCH BAR-->
     <div class="container-fluid bg-info" style="height: 45px">
         <div class="row">
-            <a href="app/img/Thể thao VTV.htm"><img src="app/img/logothethao.png" height="44px" style="margin-left: 50px;"></a>
+            <a href="../app/img/Thể thao VTV.htm"><img src="../app/img/logothethao.png" height="44px" style="margin-left: 50px;"></a>
         </div>
     </div>
     <!--END AD BANNER-->
@@ -90,7 +65,7 @@
         <div class="container">
             <div class="row">
                 <a href="http://m.thethao.vtv.vn/TinBai/2619/HOT-Anh-Vien-mo-hang-huy-chuong-vang-cho-The-thao-Viet-Nam-tai-Olympic-tre-2014" id="center_ucHotSite_lnkLatestImage">
-                    <img src="app/img/anhvien1_thumb_690.jpg" id="center_ucHotSite_imgLatestImage" class="col-xs-12 no-padding">
+                    <img src="../app/img/anhvien1_thumb_690.jpg" id="center_ucHotSite_imgLatestImage" class="col-xs-12 no-padding">
                     <div class="clearfix"></div>
                 </a>
 
@@ -105,49 +80,49 @@
                 
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2618/Nhung-tinh-huong-dang-chu-y-cua-tran-chung-ket-Cup-quoc-gia-Hai-Phong-B-Binh-Duong" title="Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương"><img src="app/img/hl1_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2618/Nhung-tinh-huong-dang-chu-y-cua-tran-chung-ket-Cup-quoc-gia-Hai-Phong-B-Binh-Duong" title="Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương"><img src="../app/img/hl1_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2618/Nhung-tinh-huong-dang-chu-y-cua-tran-chung-ket-Cup-quoc-gia-Hai-Phong-B-Binh-Duong" title="Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương"><span class="item-news-title">Những tình huống đáng chú ý của trận chung kết Cúp quốc gia: Hải Phòng - B.Bình Dương</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2615/Roger-Federer-%E2%80%93-cho-cai-duyen-o-Cincinnati" title="Roger Federer – chờ cái duyên ở Cincinnati"><img src="app/img/federer-bia_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Roger Federer – chờ cái duyên ở Cincinnati"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2615/Roger-Federer-%E2%80%93-cho-cai-duyen-o-Cincinnati" title="Roger Federer – chờ cái duyên ở Cincinnati"><img src="../app/img/federer-bia_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Roger Federer – chờ cái duyên ở Cincinnati"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2615/Roger-Federer-%E2%80%93-cho-cai-duyen-o-Cincinnati" title="Roger Federer – chờ cái duyên ở Cincinnati"><span class="item-news-title">Roger Federer – chờ cái duyên ở Cincinnati</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2613/Liverpool-2-1-Southampton-3-diem-dau-tien-cho-Lu-doan-do" title="Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!"><img src="app/img/liver_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2613/Liverpool-2-1-Southampton-3-diem-dau-tien-cho-Lu-doan-do" title="Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!"><img src="../app/img/liver_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2613/Liverpool-2-1-Southampton-3-diem-dau-tien-cho-Lu-doan-do" title="Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!"><span class="item-news-title">Liverpool 2 - 1 Southampton: 3 điểm đầu tiên cho Lữ đoàn đỏ!</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2614/22h00-ngay-17-8-Newcastle-United-%E2%80%93-Manchester-City-Cuoc-chinh-phat-cua-nha-vua" title="22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua"><img src="app/img/Man-City-v-Newcastle_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2614/22h00-ngay-17-8-Newcastle-United-%E2%80%93-Manchester-City-Cuoc-chinh-phat-cua-nha-vua" title="22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua"><img src="../app/img/Man-City-v-Newcastle_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2614/22h00-ngay-17-8-Newcastle-United-%E2%80%93-Manchester-City-Cuoc-chinh-phat-cua-nha-vua" title="22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua"><span class="item-news-title">22h00 ngày 17.8, Newcastle United – Manchester City: Cuộc chinh phạt của nhà vua</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2609/U19-Vn-kham-pha-Brunei-voi-mot-ngay-khong-bong-da" title="U19 Vn khám phá Brunei với một ngày không bóng đá"><img src="app/img/17-8-ngay-ko-bong-da-U19_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="U19 Vn khám phá Brunei với một ngày không bóng đá"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2609/U19-Vn-kham-pha-Brunei-voi-mot-ngay-khong-bong-da" title="U19 Vn khám phá Brunei với một ngày không bóng đá"><img src="../app/img/17-8-ngay-ko-bong-da-U19_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="U19 Vn khám phá Brunei với một ngày không bóng đá"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2609/U19-Vn-kham-pha-Brunei-voi-mot-ngay-khong-bong-da" title="U19 Vn khám phá Brunei với một ngày không bóng đá"><span class="item-news-title">U19 Vn khám phá Brunei với một ngày không bóng đá</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2600/ARSENAL-2-1-CRYSTAL-PALACE-Ramsey-dua-Arsenal-toi-chien-thang" title="ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng"><img src="app/img/Arsenal-Palace_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2600/ARSENAL-2-1-CRYSTAL-PALACE-Ramsey-dua-Arsenal-toi-chien-thang" title="ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng"><img src="../app/img/Arsenal-Palace_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2600/ARSENAL-2-1-CRYSTAL-PALACE-Ramsey-dua-Arsenal-toi-chien-thang" title="ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng"><span class="item-news-title">ARSENAL 2 - 1 CRYSTAL PALACE : Ramsey đưa Arsenal tới  chiến thắng</span></a>
                       
                     </div>
                     
                     <div class="item-news col-sm-6 col-xs-12">
                         <div class="item-news-line"></div>
-                        <a href="http://m.thethao.vtv.vn/TinBai/2606/Nhung-van-de-cua-Manchester-United-sau-tran-ra-quan-mua-giai-moi" title="Những vấn đề của Manchester United sau trận ra quân mùa giải mới"><img src="app/img/MU_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Những vấn đề của Manchester United sau trận ra quân mùa giải mới"></a>
+                        <a href="http://m.thethao.vtv.vn/TinBai/2606/Nhung-van-de-cua-Manchester-United-sau-tran-ra-quan-mua-giai-moi" title="Những vấn đề của Manchester United sau trận ra quân mùa giải mới"><img src="../app/img/MU_thumb_230.jpg" class="col-xs-6 col-sm-6" alt="Những vấn đề của Manchester United sau trận ra quân mùa giải mới"></a>
                         <a href="http://m.thethao.vtv.vn/TinBai/2606/Nhung-van-de-cua-Manchester-United-sau-tran-ra-quan-mua-giai-moi" title="Những vấn đề của Manchester United sau trận ra quân mùa giải mới"><span class="item-news-title">Những vấn đề của Manchester United sau trận ra quân mùa giải mới</span></a>
                       
                     </div>
@@ -183,7 +158,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/326/The-thao-24-7-ngay-17-8" title="Thể thao 24/7 ngày 17.8">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/17-8-247.jpg" border="0" width="100%" alt="Thể thao 24/7 ngày 17.8">
+                                <img src="../app/img/17-8-247.jpg" border="0" width="100%" alt="Thể thao 24/7 ngày 17.8">
                             </a>
                         </div>
                         <div>
@@ -198,7 +173,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/325/Nhip-dap-360-do-the-thao-ngay-17-8" title="Nhịp đập 360 độ thể thao ngày 17.8">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/NHIPDAP17-8.jpg" border="0" width="100%" alt="Nhịp đập 360 độ thể thao ngày 17.8">
+                                <img src="../app/img/NHIPDAP17-8.jpg" border="0" width="100%" alt="Nhịp đập 360 độ thể thao ngày 17.8">
                             </a>
                         </div>
                         <div>
@@ -213,7 +188,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/324/Nhip-dap-360-do-the-thao-ngay-16-8" title="Nhịp đập 360 độ thể thao ngày 16.8">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/Nhip-dap-1608.jpg" border="0" width="100%" alt="Nhịp đập 360 độ thể thao ngày 16.8">
+                                <img src="../app/img/Nhip-dap-1608.jpg" border="0" width="100%" alt="Nhịp đập 360 độ thể thao ngày 16.8">
                             </a>
                         </div>
                         <div>
@@ -235,7 +210,7 @@
 
         <div class="row content-area-heading">
 
-            <img src="app/img/iconVideo.png" class="icon">
+            <img src="../app/img/iconVideo.png" class="icon">
             <a href="http://m.thethao.vtv.vn/LichPhatSong.aspx" class="heading-text">XEM GÌ HÔM NAY</a>
             <div class="clearfix"></div>
             <div class="bottom-line"></div>
@@ -246,7 +221,7 @@
                  <div class="row">
                  
                             <div class="col-xs-12" style="padding-left: 0px">
-                                 <img src="app/img/VTV3_2013.png" class="col-xs-3" style="padding-left: 5px; padding-right: 0px">
+                                 <img src="../app/img/VTV3_2013.png" class="col-xs-3" style="padding-left: 5px; padding-right: 0px">
                                 
                             </div>
                           <div class="col-xs-12" style="padding-left: 5px">06:00-06:30</div>
@@ -259,7 +234,7 @@
 
                  
                          <div class="col-xs-12" style="padding-left: 0px">
-                            <img src="app/img/VTV1_2013.png" class="col-xs-3" style="padding-left: 5px; padding-right: 0px">
+                            <img src="../app/img/VTV1_2013.png" class="col-xs-3" style="padding-left: 5px; padding-right: 0px">
                             
                          </div>
                          
@@ -283,7 +258,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img id="center_ucContentL1_imgIcon" class="icon" src="app/img/iconBongDa.png">
+            <img id="center_ucContentL1_imgIcon" class="icon" src="../app/img/iconBongDa.png">
             <a href="http://m.thethao.vtv.vn/chuyenmuc/2/Bong-da" id="center_ucContentL1_lnkArea" class="heading-text">BÓNG ĐÁ</a>
             <div class="clearfix">
             </div>
@@ -294,7 +269,7 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="row">
                     <a href="http://m.thethao.vtv.vn/TinBai/2604/GIAO-HUU-QUOC-TE-JUVETUS-THANG-AN-TUONG" id="center_ucContentL1_lnkFirstNewsImage">
-                        <img src="app/img/Juventus_thumb_410.jpg" id="center_ucContentL1_imgFirstNews" class="col-xs-6 col-sm-6">
+                        <img src="../app/img/Juventus_thumb_410.jpg" id="center_ucContentL1_imgFirstNews" class="col-xs-6 col-sm-6">
                     </a><a href="http://m.thethao.vtv.vn/TinBai/2604/GIAO-HUU-QUOC-TE-JUVETUS-THANG-AN-TUONG" id="center_ucContentL1_lnkFirstNewsText" class="content-area-title">
                         <h5 id="center_ucContentL1_lblFirstNewsText">GIAO HỮU QUỐC TẾ: JUVETUS THẮNG ẤN TƯỢNG.</h5>
                     </a>
@@ -335,7 +310,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img id="center_ucContentL3_imgIcon" class="icon" src="app/img/iconQuanVot.png">
+            <img id="center_ucContentL3_imgIcon" class="icon" src="../app/img/iconQuanVot.png">
             <a href="http://m.thethao.vtv.vn/chuyenmuc/4/Quan-vot" id="center_ucContentL3_lnkArea" class="heading-text">QUẦN VỢT</a>
             <div class="clearfix">
             </div>
@@ -346,7 +321,7 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="row">
                     <a href="http://m.thethao.vtv.vn/TinBai/2615/Roger-Federer-%E2%80%93-cho-cai-duyen-o-Cincinnati" id="center_ucContentL3_lnkFirstNewsImage">
-                        <img src="app/img/federer-bia_thumb_410.jpg" id="center_ucContentL3_imgFirstNews" class="col-xs-6 col-sm-6">
+                        <img src="../app/img/federer-bia_thumb_410.jpg" id="center_ucContentL3_imgFirstNews" class="col-xs-6 col-sm-6">
                     </a><a href="http://m.thethao.vtv.vn/TinBai/2615/Roger-Federer-%E2%80%93-cho-cai-duyen-o-Cincinnati" id="center_ucContentL3_lnkFirstNewsText" class="content-area-title">
                         <h5 id="center_ucContentL3_lblFirstNewsText">Roger Federer – chờ cái duyên ở Cincinnati</h5>
                     </a>
@@ -387,7 +362,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img id="center_ucContentL7_imgIcon" class="icon" src="app/img/iconChuongTrinhNoiBat.png">
+            <img id="center_ucContentL7_imgIcon" class="icon" src="../app/img/iconChuongTrinhNoiBat.png">
             <a href="http://m.thethao.vtv.vn/chuyenmuc/5/Cac-mon-khac" id="center_ucContentL7_lnkArea" class="heading-text">CÁC MÔN KHÁC</a>
             <div class="clearfix">
             </div>
@@ -398,7 +373,7 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="row">
                     <a href="http://m.thethao.vtv.vn/TinBai/2583/SU-KIEN-THE-THAO-NOI-BAT-TRONG-NGAY-16-8-2014" id="center_ucContentL7_lnkFirstNewsImage">
-                        <img src="app/img/sktn1608_thumb_410.jpg" id="center_ucContentL7_imgFirstNews" class="col-xs-6 col-sm-6">
+                        <img src="../app/img/sktn1608_thumb_410.jpg" id="center_ucContentL7_imgFirstNews" class="col-xs-6 col-sm-6">
                     </a><a href="http://m.thethao.vtv.vn/TinBai/2583/SU-KIEN-THE-THAO-NOI-BAT-TRONG-NGAY-16-8-2014" id="center_ucContentL7_lnkFirstNewsText" class="content-area-title">
                         <h5 id="center_ucContentL7_lblFirstNewsText">SỰ KIỆN THỂ THAO NỔI BẬT TRONG NGÀY 16.8.2014</h5>
                     </a>
@@ -439,7 +414,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img src="app/img/iconTheThaoVietNam.png" class="icon">
+            <img src="../app/img/iconTheThaoVietNam.png" class="icon">
             <a href="http://m.thethao.vtv.vn/chuyenmuc/52/The-thao-Viet-Nam" id="center_ucContentL4_lnkArea" class="heading-text">THỂ THAO VIỆT NAM</a>
             <div class="clearfix">
             </div>
@@ -450,7 +425,7 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="row">
                     <a href="http://m.thethao.vtv.vn/TinBai/2619/HOT-Anh-Vien-mo-hang-huy-chuong-vang-cho-The-thao-Viet-Nam-tai-Olympic-tre-2014" id="center_ucContentL4_lnkFirstNewsImage">
-                        <img src="app/img/anhvien1_thumb_410.jpg" id="center_ucContentL4_imgFirstNews" class="col-xs-6 col-sm-6">
+                        <img src="../app/img/anhvien1_thumb_410.jpg" id="center_ucContentL4_imgFirstNews" class="col-xs-6 col-sm-6">
                     </a><a href="http://m.thethao.vtv.vn/TinBai/2619/HOT-Anh-Vien-mo-hang-huy-chuong-vang-cho-The-thao-Viet-Nam-tai-Olympic-tre-2014" id="center_ucContentL4_lnkFirstNewsText" class="content-area-title">
                         <h5 id="center_ucContentL4_lblFirstNewsText">HOT: Ánh Viên mở hàng huy chương vàng cho Thể thao Việt Nam tại Olympic trẻ 2014</h5>
                     </a>
@@ -492,7 +467,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img id="center_ContentL6_imgIcon" class="icon" src="app/img/iconPlayBig.png">
+            <img id="center_ContentL6_imgIcon" class="icon" src="../app/img/iconPlayBig.png">
             <a href="http://m.thethao.vtv.vn/video/6/Chuong-trinh-noi-bat" id="center_ContentL6_lnkArea" class="heading-text">CHƯƠNG TRÌNH NỔI BẬT</a>
             <div class="clearfix">
             </div>
@@ -506,7 +481,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/306/SIEU-SAO-GIAI-NGOAI-HANG" title="SIÊU SAO GIẢI NGOẠI HẠNG">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/ssgnh.jpg" border="0" width="100%" alt="SIÊU SAO GIẢI NGOẠI HẠNG">
+                                <img src="../app/img/ssgnh.jpg" border="0" width="100%" alt="SIÊU SAO GIẢI NGOẠI HẠNG">
                             </a>
                         </div>
                         <div>
@@ -521,7 +496,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/286/Xem-cac-ban-thang-cua-U19-Viet-Nam-vao-luoi-doi-thu-Singapore" title="Xem các bàn thắng của U19 Việt Nam vào lưới đối thủ Singapore">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/add-u19-10-8.jpg" border="0" width="100%" alt="Xem các bàn thắng của U19 Việt Nam vào lưới đối thủ Singapore">
+                                <img src="../app/img/add-u19-10-8.jpg" border="0" width="100%" alt="Xem các bàn thắng của U19 Việt Nam vào lưới đối thủ Singapore">
                             </a>
                         </div>
                         <div>
@@ -536,7 +511,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/266/Ban-tin-The-thao-trua-ngay-6-8" title="Bản tin Thể thao trưa ngày 6.8">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/6-8-ban-tin-trua.jpg" border="0" width="100%" alt="Bản tin Thể thao trưa ngày 6.8">
+                                <img src="../app/img/6-8-ban-tin-trua.jpg" border="0" width="100%" alt="Bản tin Thể thao trưa ngày 6.8">
                             </a>
                         </div>
                         <div>
@@ -551,7 +526,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/256/Cam-xuc-cua-B-Binh-Duong-voi-chuc-vo-dich-lan-thu-3" title="Cảm xúc của B.Bình Dương với chức vô địch lần thứ 3">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/2-10dc9.jpg" border="0" width="100%" alt="Cảm xúc của B.Bình Dương với chức vô địch lần thứ 3">
+                                <img src="../app/img/2-10dc9.jpg" border="0" width="100%" alt="Cảm xúc của B.Bình Dương với chức vô địch lần thứ 3">
                             </a>
                         </div>
                         <div>
@@ -573,7 +548,7 @@
 <div class="container-fluid content-area">
     <div class="container">
         <div class="row content-area-heading">
-            <img id="center_ContentL8_imgIcon" class="icon" src="app/img/iconVideo(1).png">
+            <img id="center_ContentL8_imgIcon" class="icon" src="../app/img/iconVideo(1).png">
             <a href="http://m.thethao.vtv.vn/video/7/Videos" id="center_ContentL8_lnkArea" class="heading-text">VIDEOS</a>
             <div class="clearfix">
             </div>
@@ -587,7 +562,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/313/Hinh-anh-an-tuong-Sieu-cup-Duc-2014" title="Hình ảnh ấn tượng Siêu cúp Đức 2014">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/ANTUONG.jpg" border="0" width="100%" alt="Hình ảnh ấn tượng Siêu cúp Đức 2014">
+                                <img src="../app/img/ANTUONG.jpg" border="0" width="100%" alt="Hình ảnh ấn tượng Siêu cúp Đức 2014">
                             </a>
                         </div>
                         <div>
@@ -602,7 +577,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/310/Xem-lai-3-ban-thang-cua-U19-Viet-Nam-trong-tran-thang-truoc-U19-Indonesia" title="Xem lại 3 bàn thắng của U19 Việt Nam trong trận thắng trước U19 Indonesia">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/140813-163617-820.jpg" border="0" width="100%" alt="Xem lại 3 bàn thắng của U19 Việt Nam trong trận thắng trước U19 Indonesia">
+                                <img src="../app/img/140813-163617-820.jpg" border="0" width="100%" alt="Xem lại 3 bàn thắng của U19 Việt Nam trong trận thắng trước U19 Indonesia">
                             </a>
                         </div>
                         <div>
@@ -617,7 +592,7 @@
                             <a href="http://m.thethao.vtv.vn/Player/304/Trailer-Ban-cung-Viet-Nam-voi-cai-dich-trong-diem" title="Trailer: Bắn cung Việt Nam với cái đích trọng điểm">
                                 <div class="icon-thumbnail-default">
                                 </div>
-                                <img src="app/img/bancung.jpg" border="0" width="100%" alt="Trailer: Bắn cung Việt Nam với cái đích trọng điểm">
+                                <img src="../app/img/bancung.jpg" border="0" width="100%" alt="Trailer: Bắn cung Việt Nam với cái đích trọng điểm">
                             </a>
                         </div>
                         <div>
@@ -639,14 +614,14 @@
         
 
 
-<a href="http://m.thethao.vtv.vn/#" class="scroll_top" style="opacity: 0.8; display: inline;"><img src="app/img/arrow-up-icon_32.png" alt=""></a>
+<a href="http://m.thethao.vtv.vn/#" class="scroll_top" style="opacity: 0.8; display: inline;"><img src="../app/img/arrow-up-icon_32.png" alt=""></a>
 
 
 <div class="container-fluid footer">
 
     <div class="container">
         <div class="row">
-            <a href="app/img/Thể thao VTV.htm"><img src="app/img/logothethao.png" height="44px"></a>
+            <a href="../app/img/Thể thao VTV.htm"><img src="../app/img/logothethao.png" height="44px"></a>
         </div>
 
         <div class="row margin-top-10">
@@ -679,19 +654,97 @@
 
 
 
+<script type="text/javascript">
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 180) {
+            $('.scroll_top').fadeIn();
+        } else {
+            $('.scroll_top').fadeOut();
+        }
+    });
+
+    $('.menu-button').click(function () {
+        var pos1 = $('#menu-area').css('left');
+        if (pos1 == '-240px') {
+            $('#menu-area').animate({ left: '0' }, 200, function () {
+                var heightColleft = $('#menu-area .menu-container').height();
+                $('#sport-maincontent').height(heightColleft+35);
+
+                $('#sport-maincontent').addClass('body-hidden');
+                $(".menu-overlay-area").show();
+                $(".menu-overlay-area").height(heightColleft + 35);
+            });
+        } else {
+            $('#menu-area').animate({ left: '-240' }, 200, function () {
+                $('#sport-maincontent').height('');
+                $('#sport-maincontent').removeClass('body-hidden');
+                $(".menu-overlay-area").hide();
+            });
+        }
+    });
+
+    //Generic swipe handler for all directions
+    $(".menu-overlay-area").swipe({
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            var pos1 = $('#menu-area').css('left');
+            if (pos1 != '200px') {
+                $('#menu-area').animate({ left: '-240' }, 200, function () {
+                    $('#sport-maincontent').height('');
+                    $('#sport-maincontent').removeClass('body-hidden');
+                    $(".menu-overlay-area").hide();
+                });
+            }
+        },
+        tap: function (event, target) {
+            $('#menu-area').animate({ left: "-240" }, 200, function () {
+                var heightColleft = $('#menu-area .menu-container').height();
+                $('#sport-maincontent').height('');
+                $('#sport-maincontent').removeClass("body-hidden");
+                $(".menu-overlay-area").hide();
+            })
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 0
+    });
 
 
+    //        //Generic swipe handler for all directions
+    //        $(".menu-overlay-area").swipe( {
+    //            //Generic swipe handler for all directions
+    //            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+    //                $('#menu-area').animate({left:"-240"},200,function(){
+    //                    var heightColleft = $('#menu-area .menu-container').height();
+    //                    $('#page').height('');
+    //                    $('#page').removeClass("hidden");
+    //                    $(".menu-overlay-area").hide();
+    //                })
+    //            },
+    //            tap:function(event, target) {
+    //                $('#menu-area').animate({left:"-240"},200,function(){
+    //                    var heightColleft = $('#menu-area .menu-container').height();
+    //                    $('#page').height('');
+    //                    $('#page').removeClass("hidden");
+    //                    $(".menu-overlay-area").hide();
+    //                })
+    //            },
+    //            //Default is 75px, set to 0 for demo so any distance triggers swipe
+    //            threshold:0
+    //        });
 
-<!-- Application -->
-<script src="app/app.js"></script>
-<script src="app/js/controllers/ctrl.js"></script>
-<script src="app/js/services/factory.js"></script>
+    //show dropdown menu
+    $('.img_arrow_timer').click(function () {
+        if ($('.block_show_breakumb').css('display') == 'none') {
+            $(this).addClass('active');
+            $(this).parent().next().fadeIn(200);
+        } else {
+            $(this).removeClass('active');
+            $('.block_show_breakumb').hide();
+        }
 
-
-
-
-<!-- This is the placeholder for views -->
-<div data-ng-view></div>
+        return false;
+    });
+</script>
 
 
 </body>
