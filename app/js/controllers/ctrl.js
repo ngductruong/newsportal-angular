@@ -21,6 +21,54 @@ application.controller('menuController', function($scope, httpFactory, constants
 	
 });
 
+application.controller('hotsiteController', function($scope, httpFactory, constantsFactory){
+
+	var key = constantsFactory.AuthorizationKey;
+
+	$scope.showLoading = '';
+	$scope.showData = 'none';
+
+	// Get news
+	var names = [];
+
+	init();
+
+	function init()	{	
+		$scope.listNews = [];
+
+		var key = constantsFactory.AuthorizationKey;
+
+		httpFactory.GetHotNews(key, 7)
+		.success(function(response, status){
+
+			console.log('GET DATA FROM HOTSITE');
+
+			for(var i =0; i < response.length; i++) {
+				var data = response[i];
+
+				$scope.listNews.push({
+		        	Id : data.DefaultId,
+		        	Title : data.Title,
+		        	Image : "#",
+		        	Link : "#/newsdetail/" + data.DefaultId
+		        });
+
+	        
+	        }
+		})
+		.then(function(){
+
+			for(var i = 0; i < $scope.listNews.length; i++) {
+				var item = $scope.listNews[i];
+				httpFactory.UpdateNewsImage(item, key, item.Id);
+			}
+			
+			$scope.showLoading = 'none';
+			$scope.showData = '';
+		});
+
+	};
+});
 // Modify controller
 application.controller('homeController', function($scope, httpFactory, constantsFactory, callbackFactory){
 
@@ -33,7 +81,7 @@ application.controller('homeController', function($scope, httpFactory, constants
 
 		var key = constantsFactory.AuthorizationKey;
 
-		httpFactory.GetNews(key)
+		httpFactory.GetHotNews(key, 7)
 		.success(function(response, status){
 
 			console.log(response);

@@ -119,14 +119,14 @@ application.factory('httpFactory', function($http)
 		return promise;
 	};
 
-	factory.GetNews = function(key) {
+	factory.GetHotNews = function(key, count) {
 		// Use this instead of basic ajax
 		// Basic ajax will not update the variable
 
 		var promise = 
 			$http ({
 				method: 'GET', 
-				url: 'http://api.biznews.com.vn/api/news/hot?count=30', 
+				url: 'http://api.biznews.com.vn/api/news/hot?count=' + count, 
 				headers: {'Authorization': key}
 			});
 	
