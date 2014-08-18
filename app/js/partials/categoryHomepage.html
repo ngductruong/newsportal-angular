@@ -1,0 +1,33 @@
+<div class="container-fluid content-area" data-ng-repeat="area in areas">
+    <div class="container">
+        <div class="row content-area-heading">
+            <img class="icon" src="#">
+            <a href="#" class="heading-text">{{ area.Name }} -- {{ area.CategoryId }}</a>
+            <div class="clearfix">
+            </div>
+            <div class="bottom-line">
+            </div>
+        </div>
+        <div class="row content-area-body">
+            <div class="col-xs-12 col-sm-6">
+                <div class="row">
+                    <a href="{{ area.ListNews[0].Title }}">
+                        <img src="{{ area.listNews[0].Image }}" class="col-xs-6 col-sm-6">
+                    </a>
+
+                     <a href="{{ area.ListNews[0].Title }}" class="content-area-title">
+                        <h5>{{ area.ListNews[0].Title }}</h5>
+                    </a>
+                    <p>{{ area.ListNews[0].Summary }}</p>
+                    <span class="content-area-date">Ngày 18/08/2014</span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <ul>
+                    <li><a href="#" title="{{ news.Title }}">{{ news.Title }}</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
