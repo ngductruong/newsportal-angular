@@ -6,6 +6,8 @@
 
 application.controller('menuController', function($scope, httpFactory, constantsFactory){
 
+	$scope.categories = [];
+
 	// Get configuration
 	var key = constantsFactory.AuthorizationKey;
 	
@@ -13,16 +15,14 @@ application.controller('menuController', function($scope, httpFactory, constants
 	httpFactory.GetCategories(key)
 	.success(function(response) {
 
-		console.log(response);
-
-		$scope.categories = response;
+ 		$scope.categories = response;
 
 	});
 	
 });
 
 // Modify controller
-application.controller('homeController', function($scope, httpFactory, constantsFactory, callbackFactory){
+application.controller('homeController', function($scope, $q, httpFactory, constantsFactory, callbackFactory){
 
 	var names = [];
 
@@ -34,46 +34,55 @@ application.controller('homeController', function($scope, httpFactory, constants
 		var key = constantsFactory.AuthorizationKey;
 
 		httpFactory.GetNews(key)
-		.success(function(response, status){
+		// .success(function(response, status, header, config){
 
-			console.log(response);
+		// 	console.log(header + ' - ' + JSON.stringify(config));
 
-			for(var i =0; i < response.length; i++) {
-				var data = response[i];
+		// 	console.log(response);
 
-				$scope.listNews.push({
-		        	Id : data.DefaultId,
-		        	Title : data.Title,
-		        	Image : "#",
-		        	Link : "#/newsdetail/" + data.DefaultId
-		        });
+		// 	for(var i =0; i < response.length; i++) {
+		// 		var data = response[i];
+
+		// 		$scope.listNews.push({
+		//         	Id : data.DefaultId,
+		//         	Title : data.Title,
+		//         	Image : "#",
+		//         	Link : "#/newsdetail/" + data.DefaultId
+		//         });
 
 	        
-	        }
-		})
-		.then(function(){
+	 //        }
+		// })
+		// .then(function(){
 
-			for(var i = 0; i < $scope.listNews.length; i++) {
-				var item = $scope.listNews[i];
-				httpFactory.UpdateNewsImage(item, key, item.Id);
-			}
+		// 	for(var i = 0; i < $scope.listNews.length; i++) {
+		// 		var item = $scope.listNews[i];
+		// 		httpFactory.UpdateNewsImage(item, key, item.Id);
+		// 	}
 			
-		});
+		// });
 
 		// Get categories
 		$scope.categories = [];
 
-		httpFactory.GetCategories(key)
-		.success(function(response) {
-			for(var i = 0; i < response.length; i++) {
+		var t = httpFactory.GetCategories(key);
 
-				console.log(response[i]);
+		console.log(t);
 
-				$scope.categories.push({
-					Name : response[i].Name
-				});
-			}
-		});
+		// .success(function(response, status, header, config) {
+
+		// 	console.log('GET CATEGORY::header' + header);
+		// 	console.log('GET CATEGORY::config' + config);
+
+		// 	for(var i = 0; i < response.length; i++) {
+
+		// 		console.log(response[i]);
+
+		// 		$scope.categories.push({
+		// 			Name : response[i].Name
+		// 		});
+		// 	}
+		// });
 
 	};
 	

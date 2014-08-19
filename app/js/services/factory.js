@@ -36,7 +36,7 @@ application.service('nameService', function() {
 	return service;
 });
 
-application.factory('httpFactory', function($http)
+application.factory('httpFactory', function($http, $q)
 {
 
 	var factory = {};
@@ -56,13 +56,12 @@ application.factory('httpFactory', function($http)
 
 	factory.GetCategories = function(key) {
 		var promise = 
-			$http ({
+		$http({
 				method: 'GET', 
 				url: "http://api.biznews.com.vn/api/category/all/vi-VN",
 				headers: {'Authorization': key}
-			});			
-
-		return promise;
+			});		
+		return promise;	
 	}
 
 	factory.GetNextNews = function(key, newsId, categoryId) {
@@ -123,17 +122,63 @@ application.factory('httpFactory', function($http)
 		// Use this instead of basic ajax
 		// Basic ajax will not update the variable
 
+		var listNews = [];
+
 		var promise = 
-			$http ({
-				method: 'GET', 
-				url: 'http://api.biznews.com.vn/api/news/hot?count=30', 
-				headers: {'Authorization': key}
-			});
+		$http ({
+			method: 'GET', 
+			url: 'http://api.biznews.com.vn/api/news/hot?count=30', 
+			headers: {'Authorization': key}
+		})
+		.success(function(response, status, header, config) {
+
+			console.log(header + ' - ' + JSON.stringify(config));
+
+			console.log(response);
+
+			for(var i =0; i < response.length; i++) {
+				var data = response[i];
+
+				listNews.push({
+		        	Id : data.DefaultId,
+		        	Title : data.Title,
+		        	Image : "#",
+		        	Link : "#/newsdetail/" + data.DefaultId
+		        });
+
+	        
+	        }
+		})
+		.then(function(){
+
+			for(var i = 0; i < listNews.length - 1; i++) {
+				
+				UpdateNewsData(listNews[i], key);
+
+				// httpFactory.UpdateNewsImage(item, key, item.Id);
+
+			}
+			
+		});
 	
 
 		return promise;
 	};
 
+	function UpdateNewsData(item, key) {
+
+		console.log('Start get data ' + item.Id);
+
+	 	$http ({
+			method: 'GET', 
+			url: "http://api.biznews.com.vn/api/news/" + item.Id + "/data", 
+			headers: {'Authorization': key}
+		})
+		.success(function(data){
+			console.log('Successfully updated ' + item.Id);
+			item.Image = data.Image;
+		});
+	}
 	return factory;
 
 });
