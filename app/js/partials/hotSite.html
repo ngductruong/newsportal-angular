@@ -1,0 +1,40 @@
+
+<!-- START HOT SITE NEWS -->
+<div class="container-fluid hotsite" data-ng-controller="hotsiteController">
+
+    <div style="display : {{ showLoading }} ">LOADING HOTSITE....</div>
+
+    <div class="container" style="display : {{ showData }} ">
+        <div class="row">
+            <!-- HOT ITEM -->
+            <a href="#">
+                <img src="{{ listNews[0].Image }}" class="col-xs-12 no-padding">
+                <div class="clearfix"></div>
+            </a>
+            <a href="#" class="hotsite-title">
+                <h4>{{ listNews[0].Title }}</h4>
+            </a>
+            <p> {{ listNews[0].Summary }} </p>
+            <span class="hotsite-date">Ngày 17/08/2014</span>
+
+            <!-- LIST ITEMS -->
+            <div class="list-thumbnail-news row">
+            
+                <div class="item-news col-sm-6 col-xs-12" data-ng-repeat="news in listNews" ng-if="$index > 0">
+                    <div class="item-news-line"></div>
+                    <a href="{{ news.Link }}" title="{{ news.Title }}">
+                        <img src="{{ news.Image }}" class="col-xs-6 col-sm-6" alt="#" />
+                    </a>
+                    <a href="{{ news.Link }} " title="{{ news.Title }}"><span class="item-news-title">
+                        {{ news.Title }}
+                    </span></a>
+                  
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- END HOT SITE  -->
+<div class="clearfix"></div>

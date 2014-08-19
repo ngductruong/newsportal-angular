@@ -1,18 +1,17 @@
 
-<h3>The main menu</h3>
-<ul>
-	<li data-ng-repeat="cat in categories">
-	 	<a href="#"> {{ cat.Name }} </a>
-	 </li>
-</ul>
-<br />
------------------------
-<br />
-<!-- HOME PAGE -->
 
-<ul>
-	<li data-ng-repeat="news in listNews | filter : news.Title">
-		<img width="100px" height="auto" src="{{ news.Image }}"/>
-	 	<a href="{{ news.Link }}"> {{ news.Title }} </a>
-	 </li>
-</ul>
+<!-- <div data-ng-controller="hotsiteController">
+    <div data-ng-include="'app/js/partials/hotSite.html'"></div>
+</div>
+
+<div class="clearfix"></div> -->
+
+
+<div data-ng-controller="categoryHomepageController">
+    <div data-ng-include="'app/js/partials/categoryHomepage.html'"></div>
+</div>
+
+<div class="clearfix"></div>
+
+
+

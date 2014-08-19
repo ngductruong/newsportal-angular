@@ -1,4 +1,6 @@
 
+
+
 // Add a Service
 application.service('nameService', function() {
 
@@ -36,11 +38,23 @@ application.service('nameService', function() {
 	return service;
 });
 
-application.factory('httpFactory', function($http, $q)
+application.factory('httpFactory', function($http, constantsFactory)
 {
 
 	var factory = {};
 	var names = [];
+
+	factory.GetAreas = function(key) {
+
+		var promise = 
+			$http ({
+				method: 'GET', 
+				url: "http://api.biznews.com.vn/api/area/all", 
+				headers: {'Authorization': constantsFactory.Authorization}
+			});			
+
+		return promise;
+	};
 
 	factory.GetNewsData = function(key, newsId) {
 
@@ -118,52 +132,25 @@ application.factory('httpFactory', function($http, $q)
 		return promise;
 	};
 
-	factory.GetNews = function(key) {
+	factory.GetHotNews = function(key, count) {
 		// Use this instead of basic ajax
 		// Basic ajax will not update the variable
 
 		var listNews = [];
 
 		var promise = 
-		$http ({
-			method: 'GET', 
-			url: 'http://api.biznews.com.vn/api/news/hot?count=30', 
-			headers: {'Authorization': key}
-		})
-		.success(function(response, status, header, config) {
 
-			console.log(header + ' - ' + JSON.stringify(config));
+			$http ({
+				method: 'GET', 
+				url: 'http://api.biznews.com.vn/api/news/hot?count=' + count, 
+				headers: {'Authorization': key}
+			});
 
-			console.log(response);
-
-			for(var i =0; i < response.length; i++) {
-				var data = response[i];
-
-				listNews.push({
-		        	Id : data.DefaultId,
-		        	Title : data.Title,
-		        	Image : "#",
-		        	Link : "#/newsdetail/" + data.DefaultId
-		        });
-
-	        
-	        }
-		})
-		.then(function(){
-
-			for(var i = 0; i < listNews.length - 1; i++) {
-				
-				UpdateNewsData(listNews[i], key);
-
-				// httpFactory.UpdateNewsImage(item, key, item.Id);
-
-			}
-			
-		});
 	
 
 		return promise;
 	};
+
 
 	function UpdateNewsData(item, key) {
 
@@ -179,9 +166,60 @@ application.factory('httpFactory', function($http, $q)
 			item.Image = data.Image;
 		});
 	}
+
+
+	factory.GetLatestNews = function(key, categoryId, count) {
+		// Use this instead of basic ajax
+		// Basic ajax will not update the variable
+
+		var promise = 
+			$http ({
+				method: 'GET', 
+				url: 'http://api.biznews.com.vn/api/news/latest?count=' + count + '&categoryId=' + categoryId, 
+				headers: {'Authorization': key}
+			});
+		return promise;
+	};
+
+	factory.GetNewsOfArea = function(area, count) {
+
+
+		console.log('FACTORY - GET NEWS OF AREA - ' + area.categoryId);
+		console.log(area);
+		
+		var promise = 
+		$http ({
+			method: 'GET', 
+			url: 'http://api.biznews.com.vn/api/news/latest?count=' + count + '&categoryId=' + area.CategoryId, 
+			headers: {'Authorization': constantsFactory.Authorization}
+		});
+
+		promise.success(function(response) {
+			
+			console.log('NEWS OF AREA - ' + area.CategoryId);
+			console.log(response);
+			
+			for(var i = 0; i < response.length; i++) {
+				var data = response[i];
+
+				area.ListNews.push({
+		        	Id : data.DefaultId,
+		        	Title : data.Title,
+		        	Image : "#",
+		        	Link : "#/newsdetail/" + data.DefaultId
+		        });
+			}
+		});
+
+		return promise;
+	}
+
+
 	return factory;
 
 });
+
+
 application.factory('constantsFactory', function(){
 	var factory = {};
 	factory.AuthorizationKey = "Savis-Basic-Auth 96a309941b3ca378fb9ca9fed1e750be";
