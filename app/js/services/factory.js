@@ -1,4 +1,6 @@
 
+
+
 // Add a Service
 application.service('nameService', function() {
 
@@ -36,7 +38,7 @@ application.service('nameService', function() {
 	return service;
 });
 
-application.factory('httpFactory', function($http)
+application.factory('httpFactory', function($http, constantsFactory)
 {
 
 	var factory = {};
@@ -48,7 +50,7 @@ application.factory('httpFactory', function($http)
 			$http ({
 				method: 'GET', 
 				url: "http://api.biznews.com.vn/api/area/all", 
-				headers: {'Authorization': key}
+				headers: {'Authorization': constantsFactory.Authorization}
 			});			
 
 		return promise;
@@ -160,17 +162,22 @@ application.factory('httpFactory', function($http)
 		return promise;
 	};
 
-	factory.GetNewsOfArea = function(area, key, count) {
+	factory.GetNewsOfArea = function(area, count) {
+
+
+		console.log('FACTORY - GET NEWS OF AREA - ' + area.categoryId);
+		console.log(area);
+		
 		var promise = 
 		$http ({
 			method: 'GET', 
 			url: 'http://api.biznews.com.vn/api/news/latest?count=' + count + '&categoryId=' + area.CategoryId, 
-			headers: {'Authorization': key}
+			headers: {'Authorization': constantsFactory.Authorization}
 		});
 
 		promise.success(function(response) {
 			
-			console.log('NEWS OF AREA');
+			console.log('NEWS OF AREA - ' + area.CategoryId);
 			console.log(response);
 			
 			for(var i = 0; i < response.length; i++) {

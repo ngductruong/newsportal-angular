@@ -28,9 +28,10 @@ application.controller('categoryHomepageController', function($scope, httpFactor
 
 	function init() {
 		// Get areas from server
-		var promise = httpFactory.GetAreas(key);
+		var areaPromise = httpFactory.GetAreas(key);
+
 		// Success callback
-		promise.success(function(response){
+		areaPromise.success(function(response){
 			console.log('AREAS---------------');
 			console.log(response);
 
@@ -46,14 +47,34 @@ application.controller('categoryHomepageController', function($scope, httpFactor
 		});
 		// End callback
 
-		promise.then(function(response) {
+		areaPromise.then(function(response) {
 
 			console.log('PROMISE RUNS HERE');
 
 			for(var i = 0; i < $scope.areas.length; i++) {
 				var item = $scope.areas[i];
 
-				var getNewsPromise = httpFactory.GetNewsOfArea(item,key, 7);
+				var getNewsPromise = httpFactory.GetNewsOfArea(item, 7);
+
+				// getNewsPromise.success(function(response) {
+		
+				// 	console.log('NEWS OF AREA - ' + item.CategoryId);
+				// 	console.log(response);
+					
+				// 	for(var i = 0; i < response.length; i++) {
+				// 		var data = response[i];
+
+				// 		item.ListNews.push({
+				//         	Id : data.DefaultId,
+				//         	Title : data.Title,
+				//         	Image : "#",
+				//         	Link : "#/newsdetail/" + data.DefaultId
+				//         });
+				// 	}
+				// });
+				
+				
+		// });
 
 				// getNewsPromise.success(function(response) {
 				// 	item.ListNews = response;
